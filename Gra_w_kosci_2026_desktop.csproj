@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Obrazki\kosc0.png" />
+    <None Remove="Obrazki\kosc1.png" />
+    <None Remove="Obrazki\kosc2.png" />
+    <None Remove="Obrazki\kosc3.png" />
+    <None Remove="Obrazki\kosc4.png" />
+    <None Remove="Obrazki\kosc5.png" />
+    <None Remove="Obrazki\kosc6.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Obrazki\kosc0.png" />
+    <Resource Include="Obrazki\kosc1.png" />
+    <Resource Include="Obrazki\kosc2.png" />
+    <Resource Include="Obrazki\kosc3.png" />
+    <Resource Include="Obrazki\kosc4.png" />
+    <Resource Include="Obrazki\kosc5.png" />
+    <Resource Include="Obrazki\kosc6.png" />
+  </ItemGroup>
+
+</Project>
