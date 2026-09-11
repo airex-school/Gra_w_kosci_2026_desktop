@@ -28,11 +28,41 @@ namespace Gra_w_kosci_2026_desktop
 
         private void Rzut(object sender, RoutedEventArgs e)
         {
-            foreach (Kosc k in Kosci)
-            {
-                k.RzutKoscia();
+            Image[] Obrazki = { Obrazek1, Obrazek2, Obrazek3, Obrazek4, Obrazek5 };
+            int SumaWynikow = 0;
 
+            for (int i = 0; i < Kosci.Length; i++)
+            {
+                Kosci[i].RzutKoscia();
+
+                SumaWynikow += Kosci[i].LiczbaOczek;
+                Wynik.Text = SumaWynikow.ToString();
+
+                Obrazki[i].Source = new BitmapImage(
+                    new Uri(
+                        "/Obrazki/" + Kosci[i].NazwyPlikow[Kosci[i].IdentyfikatorPlikuGraficznego],
+                        UriKind.Relative
+                    )
+                );
             }
+        }
+
+        private void Zablokuj(object sender, MouseButtonEventArgs e)
+        {
+            Image Obrazek = (Image)sender;
+            int Numer = Convert.ToInt32(Obrazek.Tag);
+
+            if (Kosci[Numer].CzyDostepna == true)
+            {
+                Kosci[Numer].ZablokujKosc();
+                Obrazek.Opacity = 0.5;
+            }
+            else
+            {
+                Kosci[Numer].CzyDostepna = true;
+                Obrazek.Opacity = 1;
+            }
+
         }
     }
 }
