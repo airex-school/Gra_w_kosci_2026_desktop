@@ -36,7 +36,6 @@ namespace Gra_w_kosci_2026_desktop
                 Kosci[i].RzutKoscia();
 
                 SumaWynikow += Kosci[i].LiczbaOczek;
-                Wynik.Text = SumaWynikow.ToString();
 
                 Obrazki[i].Source = new BitmapImage(
                     new Uri(
@@ -45,6 +44,8 @@ namespace Gra_w_kosci_2026_desktop
                     )
                 );
             }
+
+            Wynik.Text = SumaWynikow.ToString();
         }
 
         private void Zablokuj(object sender, MouseButtonEventArgs e)
